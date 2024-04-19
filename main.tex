@@ -1,0 +1,165 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+
+\begin{document}
+\section{Poloměr konvergence}
+\begin{equation*}
+\sum_{n=1}^\infty n^{-2} (x-3)^n 4^n 
+\end{equation*}
+Absolutní konvergence:
+\\
+\begin{eqnarray*}
+\lim_{n\rightarrow\infty}\left|\frac{(x-3)^{n+1} 4^{n+1} n^2}{(n+1)^2 (x-3)^n 4^n}\right| &=& \\
+4\mid x-3\mid\lim_{n\rightarrow\infty}\frac{n^2}{n^2+2n+1}&=&\\
+4\mid x-3\mid\lim_{n\rightarrow\infty}\frac{1}{1+\frac{2}{n}+\frac{1}{n^2}}&=&\\
+4\mid x-3\mid<1&=&\\
+\mid x-3\mid&<&\frac{1}{4}\\
+\end{eqnarray*}
+\begin{equation}
+\text{Absolutní konvergence: } x\in\left(\frac{11}{4};\frac{13}{4}\right)
+\end{equation}
+pro $x=\frac{13}{4}$:
+\begin{eqnarray*}
+\sum_{n=1}^\infty n^{-2} \left(\frac{1}{4}\right)^n 4^n=\sum_{n=1}^\infty \frac{4^n}{n^2 4^n}=\sum_{n=1}^\infty \frac{1}{n^2}
+\end{eqnarray*}
+Intagrální kritérium
+\begin{eqnarray*}
+\int_{1}^{\infty}\frac{dx}{n^2}=\left[-\frac{1}{n}\right]_{1}^{\infty}=0-(-1)=1 \quad\text{Konverguje}
+\end{eqnarray*}
+pro $x=\frac{11}{4}$:
+\begin{eqnarray*}
+\sum_{n=1}^\infty \frac{-1^n 4^n}{4^n n^2}=\sum_{n=1}^\infty (-1)^n\frac{1}{n^2}
+\end{eqnarray*}
+Leibnizovo kritérium
+\begin{eqnarray*}
+\lim_{n\rightarrow\infty}\frac{1}{n^2}=0\quad\text{Konverguje}
+\end{eqnarray*}
+\begin{equation*}
+\text{Řada konverguje na intervalu  }x\in\left[ \frac{11}{4};\frac{13}{4}\right]
+\end{equation*}
+\section{Limita}
+\quotedblbase S těma limitama je to trochu alchemie."\\
+\textit{doc. RNDr. Václav Finěk, Ph.D. 3.4.2024}
+\begin{eqnarray*}
+\lim_{(x,y)\rightarrow(-1,1)}\frac{2y+x-1}{y-2x-3}
+\end{eqnarray*}
+Nutná podmínka
+\begin{eqnarray*}
+\text{Pro }x=-1\quad\lim_{y\rightarrow 1}\frac{2y-2}{y-1}=\frac{2(y-1)}{y-1}&=&2\\
+\text{Pro }y=1\quad\lim_{x\rightarrow -1}\frac{1+x}{-2-2x}=\frac{1+x}{-2(1+x)}&=&-\frac{1}{2}\\
+2&\neq&-\frac{1}{2}
+\end{eqnarray*}
+Limita neexistuje
+\section{Transformace}
+\begin{eqnarray*}
+x\frac{\delta f}{\delta x}+y\frac{\delta f}{\delta y}=0
+\end{eqnarray*}
+\begin{eqnarray*}
+u=\frac{x}{y}\quad v=y
+\end{eqnarray*}
+\begin{eqnarray*}
+y=v\\
+x=uy=uv
+\end{eqnarray*}
+Řešíme podle vzorců
+\begin{eqnarray*}
+\frac{\delta f}{\delta x}=\frac{\delta f}{\delta u}*\frac{\delta u}{\delta x}+\frac{\delta f}{\delta v}*\frac{\delta v}{\delta x}\\
+\frac{\delta f}{\delta y}=\frac{\delta f}{\delta u}*\frac{\delta u}{\delta y}+\frac{\delta f}{\delta v}*\frac{\delta v}{\delta y}
+\end{eqnarray*}
+\begin{eqnarray*}
+\text{Podle x: }=\frac{\delta f}{\delta x}=\frac{\delta f}{\delta u}\frac{1}{y}+\frac{\delta f}{\delta v}*0\\
+\text{Podle y: }=\frac{\delta f}{\delta y}=\frac{\delta f}{\delta u}\frac{-x}{y^2}+\frac{\delta f}{\delta v}*1
+\end{eqnarray*}
+\begin{eqnarray*}
+x\frac{\delta f}{\delta x}+y\frac{\delta f}{\delta y}&=&\\
+uv\frac{\delta f}{\delta u}\frac{1}{v}+v\left( \frac{\delta f}{\delta u}\left( \frac{-u}{v}\right)+\frac{\delta f}{v} \right)&=&\\
+u\frac{\delta f}{\delta u}-u\frac{\delta f}{\delta u}+v\frac{\delta f}{\delta v}&=&\\
+&=&v\frac{\delta f}{\delta v}
+\end{eqnarray*}
+\section{Taylor}
+Určete Taylorův polynom třetího stupně se středem v bodě $[-1;1]$ pro funkci
+\begin{eqnarray*}
+f(x,y)=x^3-2x^2 y+3xy-2y+y^2
+\end{eqnarray*}
+Výpočet prvních derivací:
+\begin{eqnarray*}
+\text{derivace}=&\text{výsledek derivace}\qquad&\text{dosazení}\\
+\frac{\delta f}{\delta x}=&3x^2 -4xy+3y \qquad & 3+4+3=10\\
+\frac{\delta f}{\delta y}=&-2x^2 +3x-2+2y \qquad & -2-3-2+2=5\\
+\end{eqnarray*}
+Výpočet druhých derivací:
+\begin{eqnarray*}
+\frac{\delta^2 f}{\delta x^2}=&6x-4y \qquad &-6-4=-10\\
+\frac{\delta^2 f}{\delta y^2}=&2 \qquad &2\\
+\frac{\delta^2 f}{\delta xy}=&-4x+3 \qquad &4+3=7\\
+\end{eqnarray*}
+Výpočet třetích derivací:
+\begin{eqnarray*}
+\frac{\delta^3 f}{\delta x^3}=&6 \qquad &6\\
+\frac{\delta^3 f}{\delta y^3}=&0 \qquad &0\\
+\frac{\delta^3 f}{\delta x^2y}=&-4 \qquad &-4\\
+\frac{\delta^3 f}{\delta y^2x}=&0 \qquad &0\\
+\end{eqnarray*}
+\begin{equation*}
+\begin{split}
+T_3(x,y)&=7+10(x+1)-5(y-1)-10\frac{(x+1)^2}{2}+2\frac{(y-1)^2}{2}+\\
+&+7\frac{(x+1)(y-1)}{2}2+6\frac{(x+1)^2}{6}-4\frac{(x+1)^2(y-1)}{6}3+\\
+&+0\frac{(y-1)^3}{6}+0\frac{(x+1)(y-1)^2}{6}*3 \quad \text{//tohle lze vynechat}
+\end{split}
+\end{equation*}
+\section{Implicintní funkce}
+\begin{eqnarray*}
+F(x,y)=x^4-3xy+y^4+e^{3x-2y-1}=0
+\end{eqnarray*}
+Řešíme rovnici tečny a jestli křivka leží nad nebo pod tečnou
+\begin{eqnarray*}
+y=y(x)
+\end{eqnarray*}
+Funkce tečny pomocí prní derivace
+\begin{eqnarray*}
+\frac{\delta f}{\delta x}=4x^3-3y(x)-3xy'(x)+4y^3(x)y'(x)+e^{3x-2y(x)-1}(3-2y'(x))=0
+\end{eqnarray*}
+Dosadíme
+\begin{eqnarray*}
+x&=&1\\
+y(1)&=&1
+\end{eqnarray*}
+\begin{eqnarray*}
+4-3-3y'(1)+4y'(1)+e^{3-2-1}(3-2y'(1))=0\\
+-y'(1)+4=0\\
+y'(1)=4
+\end{eqnarray*}
+\begin{eqnarray*}
+y-y_a&=&a(x-x_a)\\
+y&=&a(a-x_a)+y_a\\
+\text{Funkce tečny je: }y&=&4(x-1)+1
+\end{eqnarray*}
+Druhá derivace pro zjištění zda křivka leží nad nebo pod tečnou
+\begin{eqnarray*}
+\begin{split}
+\frac{\delta^2 f}{\delta x^2}&=12x^2-3y'(x)-3y'(x)-3xy''(x)+12y^2(x)(y'(x))^2+4y^3(x)y''(x)+\\
+&+e^{3x-2y(x)-1}(3-2y'(x))^2+e^{3x-2y(x)-1}(-2y''(x))=0
+\end{split}
+\end{eqnarray*}
+Dosadíme
+\begin{eqnarray*}
+12-12-12-3y''(1)+12\times16+4y''(1)+(3-8)^2-2y''(1)&=&0\\
+-y''(1)-12+12 \times16+25&=&0\\
+y''(1)&=&205\\
+205&>&0 \qquad\text{Křivka leží nad tečnou}\\
+\end{eqnarray*}
+\end{document}
